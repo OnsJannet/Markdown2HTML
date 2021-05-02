@@ -19,9 +19,9 @@ if __name__ == "__main__":
         sys.stderr.write("Missing" + " " + sys.argv[1] + "\n")
         exit(1)
     else:
-        with open(sys.argv[1], 'r') as file:
+        with open(sys.argv[1], 'r', encoding="utf-8") as file:
             text = file.read()
-            html = markdown.markdown(text)
-        with open(sys.argv[2], 'w') as file:
+            html = markdown.markdown(text, extensions=['nl2br', 'sane_lists', 'legacy_attrs', 'legacy_em', 'attr_list'])
+        with open(sys.argv[2], 'w', encoding="utf-8") as file:
             file.write(html)
             exit(0)
