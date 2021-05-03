@@ -13,7 +13,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 3:
         sys.stderr.write("Usage: ./markdown2html.py README.md README.html")
         sys.exit(1)
-    elif not path.exists(sys.argv[1]) or not sys.argv[1].endswith('.md'):
+    elif not path.exists(sys.argv[1]):
         sys.stderr.write("Missing " + sys.argv[1] + "\n")
         sys.exit(1)
     else:
