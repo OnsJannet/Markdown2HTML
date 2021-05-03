@@ -10,11 +10,12 @@ if __name__ == "__main__":
     """
     a function that turns markdown to html 
     """
-    if len(sys.argv) < 3:
+    lenght = len(sys.argv)
+    if lenght < 3:
         sys.stderr.write("Usage: ./markdown2html.py README.md README.html")
         sys.exit(1)
-    elif not path.exists(sys.argv[1]):
-        sys.stderr.write("Missing " + sys.argv[1] + "\n")
+    elif os.path.exists(sys.argv[1]) is False:
+        sys.stderr.write("Missing " + sys.argv[1])
         sys.exit(1)
     else:
         sys.exit(0)
