@@ -4,7 +4,6 @@ script that takes 2 arguments
 """
 import sys
 from os import path
-import markdown
 
 
 if __name__ == "__main__":
@@ -18,9 +17,4 @@ if __name__ == "__main__":
         sys.stderr.write("Missing " + sys.argv[1] + "\n")
         sys.exit(1)
     else:
-        with open(sys.argv[1], 'r', encoding="utf-8") as file:
-            text = file.read()
-            html = markdown.markdown(text, extensions=['nl2br', 'sane_lists', 'legacy_attrs', 'legacy_em', 'attr_list'])
-        with open(sys.argv[2], 'w', encoding="utf-8") as file:
-            file.write(html)
-            sys.exit(0)
+        sys.exit(0)
