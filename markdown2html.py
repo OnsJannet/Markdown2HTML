@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""script that takes 2 arguments"""
 import sys
 from os import path
 import markdown
