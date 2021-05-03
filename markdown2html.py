@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-"""script that takes 2 arguments"""
+"""
+script that takes 2 arguments
+"""
 import sys
 from os import path
 import markdown
 
 
 if __name__ == "__main__":
-    '''
-    a function that turns markdown to
-    html and displays the files
-    returns exit(1) if it fails
-    exit(0) if it runs
-    '''
+    """
+    a function that turns markdown to html 
+    """
     if len(sys.argv) < 2:
         sys.stderr.write("Usage: ./markdown2html.py README.md README.html \n")
         exit(1)
