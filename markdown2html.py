@@ -27,10 +27,11 @@ if __name__ == "__main__":
             for string in text:
                 # convert (#) to html headings (h1 - h6)
                 count = string.count('#')
-                html_replace = string.replace('#' * count + ' ', '')
-                html_replace = html_replace.replace('\n', '')
-                html_line = "<h{}>{}</h{}>\n".format(
-                    count, html_replace, count)
-                html.append(html_line)
+                if count != 0:
+                    html_replace = string.replace('#' * count + ' ', '')
+                    html_replace = html_replace.replace('\n', '')
+                    html_line = "<h{}>{}</h{}>\n".format(
+                        count, html_replace, count)
+                    html.append(html_line)
             file.writelines(html)
             sys.exit(0)
