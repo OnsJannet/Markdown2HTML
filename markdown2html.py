@@ -25,6 +25,7 @@ if __name__ == "__main__":
 
         with open(sys.argv[2], 'w') as file:
             for string in text:
+                # convert (#) to html headings (h1 - h6)
                 count = string.count('#')
                 html_replace = string.replace('#' * count + ' ', '')
                 html_replace = html_replace.replace('\n', '')
